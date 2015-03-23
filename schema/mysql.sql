@@ -13,12 +13,12 @@ CREATE TABLE camp_users (
 
 CREATE TABLE camp_types (
 	camp_type	VARCHAR(32) PRIMARY KEY,
-	description	TEXT NOT NULL DEFAULT ''
+	description	TEXT NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE vcs_types (
 	vcs_type	VARCHAR(32) PRIMARY KEY,
-	description	TEXT NOT NULL DEFAULT ''
+	description	TEXT NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE camps (
@@ -32,7 +32,7 @@ CREATE TABLE camps (
 				ON UPDATE CASCADE
 				ON DELETE CASCADE,
 	create_date	DATETIME NOT NULL,
-	comment TEXT NOT NULL DEFAULT '',
+	comment TEXT NOT NULL,
 	vcs_type	VARCHAR(32) NOT NULL
 				REFERENCES vcs_types (vcs_type)
 				ON UPDATE CASCADE
